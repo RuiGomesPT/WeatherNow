@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather.Now </title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="jquery.canvasjs.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="centered">
+        <div class="gato">
+            <img src="Weather Now.png" alt="" style="margin-bottom: -50px">
+            <br>
+            <input type="text" id="search">
+            <div class="container-fluid animate__animated animate__zoomInUp animate__delay-1s" id="panel">
+                <div class="btn-group" role="group" aria-label="Basic example"
+                    style="margin-top: 20px; margin-bottom: 20px;">
+                    <button type="button"  id="buttonCard" class="btn btn-secondary">Card</button>
+                    <button type="button"  id="buttonTable" class="btn btn-secondary">Table</button>
+                    <button type="button"  id="buttonGraph" class="btn btn-secondary">Graph</button>
+                </div>
+                <div class="row" id="cardPanel">
+
+                </div>
+                <div class="row" id="tablePanel" style="display:none">
+                    <div class="col-8 offset-2 col-xs-12">
+                        <table style="margin: 0 auto; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>City</th>
+                                    <th>Temperature</th>
+                                    <th>Sunrise</th>
+                                    <th>Sunset</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" id="graphPanel">
+                    <div id="chartContainer" style="height: 50%; width: 90%"></div>
+                </div>
+            </div>
+        </div>
+        <div id="load" class="animate__animated animate__slideInLeft animate__delay-1s"></div>
+    </div>
+</body>
+
+</html>

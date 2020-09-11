@@ -1,0 +1,102 @@
+body {
+    width: 100%;
+    height:100vh;
+    background-image: url("sky.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    font-size: 12px;
+}
+
+div.centered {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    }
+  div.centered .gato {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  @keyframes example {
+    0%  {height: 80%;}
+    100%  {height: 20%;}
+  }
+
+#search {
+  width: 30%;
+  height: 50px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
+  box-shadow: 2px 2px grey;
+
+}
+
+@media (max-width:480px) { /* change depending on the mobiles you're targeting */
+  #search {
+    width: 70%;
+  }
+}
+
+#panel {
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  top: 25%;
+  left: 5%;
+  height: 75%;
+  width: 90%;
+  background-color: whitesmoke;
+  border: 1px solid darkorange;
+}
+
+.cardHolder {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+#load {
+  height: 10px;
+  width: 100%;
+  background-color: darkorange;
+  position: absolute;
+  bottom: 0%;
+}
+
+#cardPanel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#tablePanel {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#graphPanel {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
