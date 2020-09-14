@@ -4,7 +4,6 @@ $(document).ready(function () {
     var appId = "fca73468a9f85b96d53c6930a6f82317";
     var imgUrl = "https://openweathermap.org/img/wn/";
     var resolution = "@2x.png"
-    var locations = [];
     var locationTemperature = [];
 
     $('#search').keyup(delay(function (e) {
@@ -22,8 +21,6 @@ $(document).ready(function () {
 
 
     function loadData(data) {
-        console.log(data);
-        locations.push(data);
         var temperature = data.main.temp - 273.15;
         var maxTemp = data.main.temp_max - 273.15;
         var minTemp = data.main.temp_min - 273.15;
@@ -85,7 +82,10 @@ $(document).ready(function () {
         $('#cardPanel').css({ "display": "none" });
         $('#tablePanel').css({ "display": "none" });
         $('#graphPanel').css({ "display": "block" });
+        renderGraph();
     });
+
+    
 
     function renderGraph() {
         var dps = [];
@@ -97,28 +97,28 @@ $(document).ready(function () {
         };
 
         parseDataPoints();
-
+        
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
-
+            backgroundColor: "rgba(245, 245, 245)",
             title: {
                 text: "Temperature of Cities"
             },
             axisX: {
-                interval: 1
+                interval: 0.5,
+                title: "Cities"
             },
             axisY2: {
                 interlacedColor: "rgba(1,77,101,.2)",
                 gridColor: "rgba(1,77,101,.1)",
-                title: "Temperature of cities"
+                title: "Temperature"
             },
             data: [{
                 type: "bar",
                 name: "cities",
                 axisYType: "secondary",
-                color: "#014D65",
+                color: "#FF9425",
                 dataPoints: dps
-
             }]
         });
         chart.options.data[0].dataPoints = dps;
